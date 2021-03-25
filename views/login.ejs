@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<header class='mt-5'><%- include('./partials/nav.ejs', {page: 'login'}) %></header>
+		<main
+			class="d-flex flex-column w-50 mx-auto mt-5 text-center justify-content-center"
+		>
+			<h1>hello from login</h1>
+			<button class="btn btn-primary w-25 mx-auto" onclick="toggleLoggedIn()">
+				<%- loggedIn ? 'Logout' : 'Login' %>
+			</button>
+		</main>
+		<script>
+			const toggleLoggedIn = async (e) => {
+				await fetch('http://localhost:3500/login', { method: 'POST' });
+				history.go();
+				/* location.reload(); */
+			};
+		</script>
+	</body>
+</html>

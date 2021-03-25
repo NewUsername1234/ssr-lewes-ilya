@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<header class="mt-5">
+			<%- include('./partials/nav.ejs', {page: 'products'}) %>
+		</header>
+		<main
+			class="class=d-flex flex-column w-50 mx-auto mt-5 text-center justify-content-center"
+		>
+			<h1>hello from products</h1>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Article Number</th>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let product of products) { %>
+					 <tr>
+						<td> <%= product.articleNo %> </td>
+						<td> <%= product.name %> </td>
+						<td> <%= product.description %> </td>
+						<td> <%= product.price %> </td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</main>
+	</body>
+</html>

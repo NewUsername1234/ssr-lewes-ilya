@@ -1,0 +1,16 @@
+<ul class="nav nav-pills justify-content-center">
+	<li class="nav-item">
+		<a class="nav-link <%- page === 'home' ? 'active' : '' %> " href="/">Home</a>
+	</li>
+    <% if(loggedIn){ %>
+        <li class="nav-item">
+            <a class="nav-link <%- page === 'products' ? 'active' : '' %>" href="/products">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <%- page === 'about' ? 'active' : '' %>" href="/about">About</a>
+        </li>
+    <% } %>
+	<li class="nav-item">
+		<a class="nav-link <%- page === 'login' ? 'active' : '' %>" href="/login">Login</a>
+	</li>
+</ul>
